@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  # Development service
+  katalyst-dev:
+    build:
+      context: .
+      target: development
+    container_name: katalyst-dev
+    ports:
+      - "5173:5173"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+    env_file:
+      - .env
+    profiles:
+      - dev
+
+  # Production service
+  katalyst-prod:
+    build:
+      context: .
+      target: production
+    container_name: katalyst-prod
+    ports:
+      - "80:80"
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
+    profiles:
+      - prod
+
+  # Build only service (for CI/CD)
+  katalyst-build:
+    build:
+      context: .
+      target: build
+    container_name: katalyst-build
+    volumes:
+      - ./dist:/app/dist
+    profiles:
+      - build
