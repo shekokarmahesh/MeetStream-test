@@ -43,10 +43,10 @@ VITE_GOOGLE_CLIENT_SECRET=your_client_secret_here
 
 # MCP Configuration
 VITE_MCP_SERVER_URL=http://localhost:5173/api/mcp
-MCP_SERVER_URL=https://apollo.composio.dev/v3/mcp/f61fe1ab-bd1b-4562-8f12-d9449d4febce/mcp?include_composio_helper_actions=true
+MCP_SERVER_URL=https://apollo.composio.dev/v3/mcp/test
 
 # AI Configuration (your existing values)
-VITE_OPENROUTER_API_KEY=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
+VITE_OPENROUTER_API_KEY=test
 VITE_OPENROUTER_BASE_URL=https://openrouter.ai/api/v1
 VITE_CONTRACT_PARSER_MODEL=google/gemma-3-12b-it:free
 ```
