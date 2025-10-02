@@ -79,8 +79,7 @@ export default function CalendarPage() {
     pastEvents,
     loading,
     fetchEvents,
-    retry,
-    isReady
+    retry
   } = useCalendarMCP(accessToken);
 
   useEffect(() => {

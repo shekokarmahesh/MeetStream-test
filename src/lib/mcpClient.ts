@@ -18,13 +18,12 @@ interface CalendarEvent {
  * Uses direct HTTP calls instead of MCP SDK transport for compatibility
  */
 export class DynamicMCPClient {
-  private serverUrl: string;
   private accessToken: string;
   private isConnected: boolean = false;
 
   constructor(config: MCPClientConfig) {
-    this.serverUrl = config.serverUrl;
     this.accessToken = config.accessToken;
+    // serverUrl not needed since we're using Google Calendar API directly
   }
 
   /**
